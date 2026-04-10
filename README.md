@@ -12,10 +12,7 @@ The pipeline includes:
 * LLM-based qualitative evaluation
 ### Setup Instructions
 #### 1. Install all the dependencies
-* for pipeline:
-pip install torch transformers datasets evaluate pandas scikit-learn
-* for retrieval:
-pip install sentence-transformers faiss-cpu
+* pip install -r requirements.txt
 #### 2. Running Experiments
 * Clear Previous Results 
 open("results.jsonl", "w").close()

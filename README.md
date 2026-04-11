@@ -17,13 +17,13 @@ The pipeline includes:
 * Clear Previous Results 
 open("results.jsonl", "w").close()
 * Run Generation
-* py model.py
+* py Evaluation_scripts/model.py
 ##### This will
 * Load dataset
 * Generate answers
 * Save results in results.jsonl
 * Run LLM-as-a-Judge
-* py llm_as_judge.py
+* py Evaluation_scripts/llm_as_judge.py
 ##### Outputs:
 * Correctness
 * Completeness

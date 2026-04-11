@@ -89,7 +89,7 @@ The pipeline consists of the following components:
   * Convert dataset contexts into embeddings  
   * Store in vector index  
   * Retrieve top-k relevant chunks  
-    ![][image1]
+    ![Screenshot 2026-04-11 222239](https://github.com/user-attachments/assets/b9877030-da2c-4aa5-9d2b-99518082c1f6)
 
 ### **5.3 Prompt Construction**
 
@@ -182,15 +182,15 @@ To capture semantic correctness:
   * Completeness  
   * Overall score (0–1)
 
-![][image2]
+![Screenshot 2026-04-11 222306](https://github.com/user-attachments/assets/c7c53d1c-245d-4d67-b829-1b2a00dcd413)
 
 ## **9\. Results Summary**
 
-![][image3]
+![Screenshot 2026-04-11 222323](https://github.com/user-attachments/assets/c0bac4a5-de95-4171-a332-d5e3750d7dd7)
 
 ## **10\. Analysis**
 
-![][image4]
+![Screenshot 2026-04-11 222341](https://github.com/user-attachments/assets/06e9ce6c-3faf-46d3-aa92-7801dde73e00)
 
 ### **10.1 Strengths**
 
@@ -222,9 +222,10 @@ The retrieval-based approach introduces additional context to improve answer gen
 
 However, retrieval also introduces several trade-offs. The inclusion of additional context increases token usage, leading to higher computational cost and latency. Moreover, if the retrieved passages are not highly relevant, they introduce noise, which can confuse the model and negatively impact Exact Match (EM) scores.  
 In contrast, the no-retrieval baseline benefits from lower latency, reduced token consumption, and more stable outputs due to the absence of irrelevant information. On extractive datasets where the answer is already present in the provided context, the baseline often performs competitively or even better in terms of EM.  
-![][image5]  
+![Screenshot 2026-04-11 222358](https://github.com/user-attachments/assets/5c9fe15c-2789-42f6-ad65-f3cafa7690c9)
+ 
 Talking about the LLM as a judge results , due to space constraints for running model locally qwen-2.5:0.5b model that is used for agent benchmarking was used , Although a better model would have been preferred but due to limitations this model was used . According to the diagram the results are quite fair for this model when we talk about the correctness of the model basically represents the F1 score only and its evident from the results that F1 scores for different setups if scaled down by 10 will give the correctness score . For the basic prompt it gives the maximum correctness but gives minimum completeness which signifies that the model relied less on context and which is why it has the maximum reasoning among three setups giving the best performance with 65 as F1 score. Moving on to structured prompt which gave a fair EM score and tried to predict correct results but less than the basic prompt but as it is evident from the completeness score it relied heavily on context and took longer context to respond but then the reasoning is the least because it is focussing more on template based answers and not actual reasoning . Coming to the last one rag based retrieval but basic prompt has a very poor correctness due to introduction of noise and irrelevant context where has a higher completeness due to longer context retrieval but then reasoning is again close to basic prompt so it signifies that the basic prompt has a important role for LLM to understand the task but is failing now on context understanding.  
-![][image6]
+![Screenshot 2026-04-11 222416](https://github.com/user-attachments/assets/7fb11525-5daf-446a-b18d-8ecaf8f90394)
 
 ## **11\. Conclusion**
 

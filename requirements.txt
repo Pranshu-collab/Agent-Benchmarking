@@ -1,0 +1,13 @@
+pytorch
+transformers
+datasets
+json
+evaluate
+pandas
+re
+faiss-cpu
+sentence-transformers
+langchain
+langchain-community
+langchain-huggingface
+langchain-text-splitters
